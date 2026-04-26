@@ -85,6 +85,15 @@
 :root[data-theme="light"][data-accent="amber"]  { --accent: oklch(0.52 0.18 65);  --accent-soft: oklch(0.52 0.18 65  / 0.12); }
 :root[data-theme="light"][data-accent="violet"] { --accent: oklch(0.48 0.20 300); --accent-soft: oklch(0.48 0.20 300 / 0.12); }
 
+/* Light mode: flip accent-soft+accent-text elements to solid bg + white text */
+:root[data-theme="light"] .commit-tag,
+:root[data-theme="light"] .status-pill,
+:root[data-theme="light"] .palette-item-first {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: transparent;
+}
+
 :root[data-density="compact"] { --row-h: 22px; --pad: 12px; --font: 13px; }
 :root[data-density="comfy"]   { --row-h: 26px; --pad: 16px; --font: 13.5px; }
 
