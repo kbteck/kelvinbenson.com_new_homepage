@@ -73,11 +73,17 @@
   --icon-ts: #0369a1;
 }
 
-/* Accents */
+/* Accents — dark mode (bright, high-saturation) */
 :root[data-accent="lime"]   { --accent: oklch(0.82 0.20 130); --accent-soft: oklch(0.82 0.20 130 / 0.18); }
 :root[data-accent="blue"]   { --accent: oklch(0.72 0.16 240); --accent-soft: oklch(0.72 0.16 240 / 0.18); }
-:root[data-accent="amber"]  { --accent: oklch(0.78 0.16 65);  --accent-soft: oklch(0.78 0.16 65 / 0.18); }
+:root[data-accent="amber"]  { --accent: oklch(0.78 0.16 65);  --accent-soft: oklch(0.78 0.16 65  / 0.18); }
 :root[data-accent="violet"] { --accent: oklch(0.72 0.20 300); --accent-soft: oklch(0.72 0.20 300 / 0.18); }
+
+/* Accents — light mode overrides (darker values for contrast on light bg) */
+:root[data-theme="light"][data-accent="lime"]   { --accent: oklch(0.48 0.18 130); --accent-soft: oklch(0.48 0.18 130 / 0.12); }
+:root[data-theme="light"][data-accent="blue"]   { --accent: oklch(0.45 0.18 240); --accent-soft: oklch(0.45 0.18 240 / 0.12); }
+:root[data-theme="light"][data-accent="amber"]  { --accent: oklch(0.52 0.18 65);  --accent-soft: oklch(0.52 0.18 65  / 0.12); }
+:root[data-theme="light"][data-accent="violet"] { --accent: oklch(0.48 0.20 300); --accent-soft: oklch(0.48 0.20 300 / 0.12); }
 
 :root[data-density="compact"] { --row-h: 22px; --pad: 12px; --font: 13px; }
 :root[data-density="comfy"]   { --row-h: 26px; --pad: 16px; --font: 13.5px; }
