@@ -120,11 +120,16 @@ function StatusBar({ activeFile, theme, onCmdK, terminalOpen, onToggleTerminal }
   const lineCount = activeFile ? (
     activeFile.type === "commits" ? activeFile.commits.length :
     activeFile.type === "json" ? Object.values(activeFile.skills).flat().length :
+    activeFile.type === "languages" ? (activeFile.spoken || []).length + (activeFile.written || []).length + 10 :
+    activeFile.type === "certifications" ? (activeFile.certs || []).length :
+    ("code" in activeFile) ? (activeFile.code || "").split("\n").length + (activeFile.body || "").split("\n").length :
     (activeFile.body || "").split("\n").length
   ) : 0;
   const langLabel =
     !activeFile ? "—" :
-    activeFile.type === "md" ? "Markdown" :
+    (activeFile.type === "md" || "code" in activeFile) ? "Markdown" :
+    activeFile.type === "languages" ? "TypeScript" :
+    activeFile.type === "certifications" ? "Markdown" :
     activeFile.type === "json" ? "JSON" :
     activeFile.type === "ts" ? "TypeScript" :
     activeFile.type === "commits" ? "Git Log" : "Plain";
@@ -231,8 +236,12 @@ function App() {
   const [activeId, setActiveId] = useS("professional-summary");
   const [paletteOpen, setPaletteOpen] = useS(false);
   const [typingKey, setTypingKey] = useS(0); // bumps to retrigger typing on tab switch
+  const mNavDirRef = useR('m-fade');
+  const mNavOverrideRef = useR(false);
 
   const openFile = useCB((id) => {
+    if (!mNavOverrideRef.current) mNavDirRef.current = 'm-fade';
+    mNavOverrideRef.current = false;
     setOpenTabIds((prev) => prev.includes(id) ? prev : [...prev, id]);
     setActiveId(id);
     setTypingKey((k) => k + 1);
@@ -277,6 +286,8 @@ function App() {
   const [mTermOpen, setMTermOpen] = useS(false);
 
   const navByOffset = useCB((delta) => {
+    mNavDirRef.current = delta > 0 ? 'm-slide-fwd' : 'm-slide-back';
+    mNavOverrideRef.current = true;
     const idx = files.findIndex((f) => f.id === activeId);
     const next = files[(idx + delta + files.length) % files.length];
     if (next) openFile(next.id);
@@ -309,7 +320,7 @@ function App() {
           onActivate={(id) => { setActiveId(id); setTypingKey((k) => k + 1); }}
           onClose={closeTab}
         />
-        <main className="meditor" key={activeId}>
+        <main className={"meditor " + mNavDirRef.current} key={activeId}>
           {activeFile ? (
             <div className="meditor-pane">
               <div className="meditor-filehead">

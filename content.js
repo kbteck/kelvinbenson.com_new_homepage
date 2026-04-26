@@ -28,21 +28,17 @@ and ship the kind of internal tools that quietly make companies faster.
   {
     id: "overview",
     name: "overview.md",
-    type: "md",
+    type: "overview",
     icon: "md",
-    body: `# Overview
-
-\`\`\`ts
-const kelvin: Consultant = {
+    heading: "Overview",
+    code: `const kelvin: Consultant = {
   role:      "Software Project Manager",
   company:   "Vawick Software",
   focus:     ["delivery", "coaching", "tooling"],
   mindset:   "engineering-first",
   available:  true,
-};
-\`\`\`
-
----
+};`,
+    body: `---
 
 ## 1. Ship the roadmap
 
@@ -109,17 +105,13 @@ in a sprint, used for years.
   {
     id: "education",
     name: "education.md",
-    type: "md",
+    type: "education",
     icon: "md",
-    body: `# Education
-
-\`\`\`ts
-const degrees   = 4;
+    heading: "Education",
+    code: `const degrees   = 4;
 const countries = ["Germany", "Spain", "UK (Remote)", "Nigeria"];
-const span      = "2003 – 2021";
-\`\`\`
-
----
+const span      = "2003 – 2021";`,
+    body: `---
 
 | Institution | Degree | Period |
 |---|---|---|
@@ -170,104 +162,154 @@ const span      = "2003 – 2021";
   {
     id: "professional-value",
     name: "professional-value.md",
-    type: "md",
+    type: "professional-value",
     icon: "md",
-    body: `# Professional Value
+    heading: "Professional Value",
+    code: `interface ProfessionalValue {
+  mindset:   "servant-leadership";
+  expertise: string[];
+  approach:  string[];
+}
 
-What you actually get when you hire me:
+const kelvin: ProfessionalValue = {
+  mindset:   "servant-leadership",
+  expertise: ["Agile frameworks", "SaaS delivery", "DevOps"],
+  approach:  ["coaching", "collaboration", "technical insight"],
+};`,
+    body: `---
 
-## Week 1 — diagnosis
-A written audit of how work moves through your team. Where
-it stalls, where it duplicates, where decisions die in
-Slack threads.
-
-## Week 2–4 — install
-The smallest process change that fixes the biggest leak.
-Usually one ritual added, two removed.
-
-## Month 2+ — compound
-Your team gets faster without noticing. I get quieter.
-That's the goal.
+A servant-leadership approach that empowers teams and aligns stakeholders
+around shared goals. Strategy and execution in the same conversation —
+not in separate rooms.
 
 ---
 
-## Outcomes from past engagements
+## What I bring
 
-| Client     | Before          | After           | Δ           |
-|------------|-----------------|-----------------|-------------|
-| Fintech A  | 14d lead time   | 3d lead time    | -78%        |
-| Devtool B  | 0.6 ship/wk     | 2.4 ship/wk     | +300%       |
-| Climate C  | 31% on-time     | 86% on-time     | +55pp       |
+| Capability | What it means for you |
+|---|---|
+| **Servant leadership** | Teams that own their work and deliver consistently |
+| **Agile + SaaS expertise** | Roadmap to release without losing the thread |
+| **Coaching mindset** | Capability that stays after the engagement ends |
+| **Technical insight** | No translation layer between you and your engineers |
+| **Stakeholder alignment** | Shared goals, fewer surprises, faster decisions |
 
-Numbers are real, names redacted on request.
+---
+
+> Creating environments where innovation and continuous improvement are the default — not the exception.
+
+---
+
+## Currently building
+
+*Case studies and project outcomes in progress. Check back soon.*
 `
   },
   {
     id: "certifications",
     name: "certifications.md",
-    type: "md",
+    type: "certifications",
     icon: "md",
-    body: `# Certifications
-
-- **PMP** — Project Management Professional · 2019
-- **CSM** — Certified ScrumMaster · 2017
-- **PSPO II** — Professional Scrum Product Owner · 2020
-- **SAFe Agilist** · 2021 *(used once, do not recommend)*
-- **AWS Cloud Practitioner** · 2022
-
-Certifications are table stakes. They prove you sat through
-the curriculum, not that you can run a team. Ask me about
-the failures instead.
-`
+    note: `> Certifications are table stakes. They prove you sat through the curriculum, not that you can run a team. Ask me about the failures instead.`,
+    certs: [
+      {
+        id: "safe-6-sm",
+        name: "SAFe® 6.0 Scrum Master",
+        abbr: "SSM",
+        issuer: "Scaled Agile",
+        imageUrl: "https://images.credly.com/size/340x340/images/441384f8-8b0a-4e7f-94bd-966496a10fd9/image.png",
+        verifyUrl: "https://www.credly.com/badges/0dee3faf-2f15-4d82-a849-95f534f48342"
+      },
+      {
+        id: "icp-acc",
+        name: "ICP-ACC",
+        abbr: "ICP-ACC",
+        issuer: "ICAgile",
+        imageUrl: "https://www.icagile.com/media/badges/png/ICP-ACC.png",
+        verifyUrl: "https://www.icagile.com/credentials/3bebe085-e3c5-4aef-aa59-ac89660671f8"
+      },
+      {
+        id: "psm-1",
+        name: "PSM I",
+        abbr: "PSM I",
+        issuer: "Scrum.org",
+        imageUrl: "https://images.credly.com/size/340x340/images/a2790314-008a-4c3d-9553-f5e84eb359ba/image.png",
+        verifyUrl: "https://www.credly.com/badges/70890a79-adcd-42d2-b7c7-f97c52f37152"
+      },
+      {
+        id: "pspo-1",
+        name: "PSPO I",
+        abbr: "PSPO I",
+        issuer: "Scrum.org",
+        imageUrl: "https://images.credly.com/size/340x340/images/591762c5-fae7-49c6-b326-e1756979928d/image.png",
+        verifyUrl: "https://www.credly.com/badges/5d31400a-571c-480b-812a-9041d833f96c"
+      },
+      {
+        id: "cspo",
+        name: "CSPO",
+        abbr: "CSPO",
+        issuer: "Scrum Alliance",
+        imageUrl: "https://www.scrumalliance.org/badges/sa-cspo-600.png",
+        verifyUrl: "https://www.scrumalliance.org"
+      },
+      {
+        id: "asm-exin",
+        name: "ASM-EXIN",
+        abbr: "ASM",
+        issuer: "EXIN",
+        imageUrl: "https://mylogin.exin.nl/BlobData/Exillence/MultiModuleCertificate/CertificateBadgeImage/630589.png?ts=43641.5914699074",
+        verifyUrl: "https://mylogin.exin.nl/?CERTIFICATENUMBER=6409477.20836974&LASTNAME=Benson&MODULEID=630589&PAGEID=0&SID=9e5fc41324709c6183da98cb7fc447d0&TOOLNAME=CertificateCheckTool"
+      },
+      {
+        id: "capm-iapm",
+        name: "CAPM-IAPM",
+        abbr: "CAPM",
+        issuer: "IAPM",
+        imageUrl: "https://www.iapm.net/uploaded_files/_managedByElements/iapm-badge-round-big-agilepm_id36258.jpeg?@1260x1260/rpo",
+        verifyUrl: "https://www.iapm.net/en/certification/levels-of-certification/certified-agile-project-manager-iapm/"
+      }
+    ]
   },
   {
     id: "languages",
     name: "languages.md",
-    type: "md",
+    type: "languages",
     icon: "md",
-    body: `# Languages
-
-## Spoken
-- **English** — Native
-- **Spanish** — Professional working proficiency
-- **Portuguese** — Conversational
-- **French** — Reading only, with effort
-
-## Written (the other kind)
-- **TypeScript** — daily
-- **Python** — for scripts and data
-- **SQL** — fluent
-- **Bash** — well enough to be dangerous
-
-The first set is for the clients. The second is for the
-engineers I work with — speaking their language earns trust
-faster than any certification.
-`
+    spoken: [
+      { name: "English",  level: "native",         pct: 100 },
+      { name: "German",   level: "professional",   pct: 84  },
+      { name: "Spanish",  level: "conversational", pct: 68  },
+    ],
+    written: [
+      { name: "TypeScript",  usage: "daily",           pct: 95 },
+      { name: "React",       usage: "daily",           pct: 90 },
+      { name: "Python",      usage: "scripts & data",  pct: 82 },
+      { name: "SQL",         usage: "fluent",          pct: 88 },
+      { name: "Bash",        usage: "well enough",     pct: 72 },
+    ],
   },
   {
     id: "availability",
     name: "availability.md",
-    type: "md",
+    type: "availability",
     icon: "md",
-    body: `# Availability
-
-\`\`\`
-status:        OPEN
+    heading: "Availability",
+    code: `status:        OPEN
 capacity:      ~25 hrs/week
 booking:       Q3 2026
 timezone:      GMT+2 (CAT)
 remote:        yes, default
-on-site:       quarterly, by arrangement
-\`\`\`
+on-site:       quarterly, by arrangement`,
+    body: `---
 
 ## Engagement types I take
 
-1. **Fractional PM** — 3–6 months, 15–25 hrs/wk
-2. **Delivery audit** — 2 weeks, fixed scope
-3. **Coaching** — 1:1s with PMs and EMs, monthly retainer
+1. **Technical Agile Delivery** — 4–12 weeks, execution-focused
+2. **Delivery Audit** — 1–2 weeks, fixed scope
+3. **Agile Setup** — short-term, team + process implementation
+4. **Embedded Support** — flexible, critical delivery phases
 
-Not currently taking: full-time roles, equity-only deals,
-or anything labeled "rockstar."
+Currently taking: full-time roles, equity-only deals, or anything labeled "rockstar."
 `
   },
   {
