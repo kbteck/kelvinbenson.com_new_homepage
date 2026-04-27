@@ -9,20 +9,15 @@ window.PORTFOLIO_FILES = [
     icon: "md",
     body: `# Professional Summary
 
-Agile Project Manager, software consultant, and founder with 10+ years
-turning ambiguous problems into shipped product. I work at the seam of
-engineering and strategy — close enough to read the code, far enough back
-to see the roadmap.
+Agile Project Manager, hands on developer, and emerging SAP ERP professional focused on building secure, efficient systems. I translate complex requirements into clean architectures and deliver enterprise ready solutions that improve workflows, compliance, and operational clarity.
 
-I run lean delivery teams, coach product orgs out of waterfall habits,
-and ship the kind of internal tools that quietly make companies faster.
+I run lean delivery teams, coach product orgs out of waterfall habits, and ship the kind of internal tools that quietly make companies faster.
 
-> "Strong opinions about process, weakly held about which framework
-> you use to implement them."
+> "Disciplined about process, adaptable about frameworks—because great software comes from principles, not dogma."
 
 ---
 
-**Currently:** Software Project Manager @ Vawick Software — fractional PM consultancy for early-stage SaaS.
+**Currently:** Software Project Manager & Developer @ Vawick Consulting UG — leading Agile delivery and building scalable internal tools for SaaS and compliance focused teams.
 `
   },
   {
@@ -33,7 +28,7 @@ and ship the kind of internal tools that quietly make companies faster.
     heading: "Overview",
     code: `const kelvin: Consultant = {
   role:      "Software Project Manager",
-  company:   "Vawick Software",
+  company:   "Vawick Consulting UG",
   focus:     ["delivery", "coaching", "tooling"],
   mindset:   "engineering-first",
   available:  true,
@@ -42,14 +37,14 @@ and ship the kind of internal tools that quietly make companies faster.
 
 ## 1. Ship the roadmap
 
-I run delivery for engineering teams of \`4–25\`. The work is unglamorous:
+I run delivery for engineering teams of 4–10. The work is unglamorous:
 \`sprint cadence\`, \`backlog hygiene\`, stakeholder translation. The kind
 of operational discipline that compounds quietly until the team ships twice
 as fast and nobody can explain why.
 
 ## 2. Coach the org
 
-For Series A/B teams: install the **lightest process that actually works**.
+For early stage teams: install the **lightest process that actually works**.
 I audit how decisions move, where work stalls, and what rituals are theatre.
 Usually one ceremony added, two removed. Less \`Jira\`, more clarity.
 
@@ -122,7 +117,7 @@ const span      = "2003 – 2021";`,
 
 ---
 
-> Four degrees across three countries — one consistent thread: how systems perform under constraint.
+> Studied across multiple countries with one focus: how systems behave under real‑world constraints.
 `
   },
   {
@@ -297,7 +292,7 @@ not in separate rooms.
     code: `status:        OPEN
 capacity:      ~25 hrs/week
 booking:       Q3 2026
-timezone:      GMT+2 (CAT)
+timezone:      GMT+1 (CET)
 remote:        yes, default
 on-site:       quarterly, by arrangement`,
     body: `---
